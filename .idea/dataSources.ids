@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - rtwx_seckill@db01.dev1.fn" uuid="60d098b9-2241-4755-9272-345c97fd8d3d">
+    <database-info product="MySQL" version="5.6.21-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="rtwx_seckill"/>
+      <table id="2" parent="1" name="activity"/>
+      <table id="3" parent="1" name="activity_cfg"/>
+      <table id="4" parent="1" name="activity_sku"/>
+      <table id="5" parent="1" name="activity_sku_store"/>
+      <table id="6" parent="1" name="area_reg_store"/>
+      <table id="7" parent="1" name="order_log"/>
+      <table id="8" parent="1" name="orderinfo"/>
+      <table id="9" parent="1" name="remind"/>
+      <table id="10" parent="1" name="sku"/>
+      <column id="11" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="12" parent="2" name="name">
+        <comment>活动名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="13" parent="2" name="code">
+        <comment>活动编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="14" parent="2" name="status">
+        <comment>活动状态 0-无效，1-有效</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="15" parent="2" name="show_begin_time">
+        <comment>展示开始时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="16" parent="2" name="begin_time">
+        <comment>活动开始时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="17" parent="2" name="end_time">
+        <comment>活动结束时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="18" parent="2" name="is_delete">
+        <comment>是否删除 0-未删除，1-已删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="19" parent="2" name="create_id">
+        <comment>创建人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="20" parent="2" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="21" parent="2" name="update_id">
+        <comment>更新人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="22" parent="2" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="23" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="24" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="25" parent="3" name="activity_cfg_key">
+        <comment>活动配置项</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="26" parent="3" name="activity_cfg_value">
+        <comment>活动配置</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(3000)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="27" parent="3" name="is_delete">
+        <comment>是否删除，0-未删除，1-已删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="28" parent="3" name="create_id">
+        <comment>创建人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="29" parent="3" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="30" parent="3" name="update_id">
+        <comment>更新人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="31" parent="3" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="32" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="33" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="34" parent="4" name="activity_id">
+        <comment>活动ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="35" parent="4" name="sku_id">
+        <comment>商品ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="36" parent="4" name="is_delete">
+        <comment>是否删除 0-未删除，1-已删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="37" parent="4" name="create_id">
+        <comment>创建人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="38" parent="4" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="39" parent="4" name="update_id">
+        <comment>更新人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="40" parent="4" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="41" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="42" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="43" parent="5" name="activity_id">
+        <comment>活动ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="44" parent="5" name="sku_id">
+        <comment>商品ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="45" parent="5" name="area_code">
+        <comment>区域编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="46" parent="5" name="area_name">
+        <comment>区域名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="47" parent="5" name="reg_code">
+        <comment>板块编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="48" parent="5" name="reg_name">
+        <comment>板块名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="49" parent="5" name="store_code">
+        <comment>门店编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="50" parent="5" name="store_name">
+        <comment>门店名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="51" parent="5" name="rt_artno">
+        <comment>rt货号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="52" parent="5" name="original_price">
+        <comment>商品原价</comment>
+        <mandatory>1</mandatory>
+        <data-type>decimal(9,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="53" parent="5" name="seconds_kill_price">
+        <comment>秒杀价</comment>
+        <mandatory>1</mandatory>
+        <data-type>decimal(9,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="54" parent="5" name="to_sell_num">
+        <comment>可卖量</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="55" parent="5" name="sold_num">
+        <comment>已售数量</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="56" parent="5" name="curr_to_sell_num">
+        <comment>当前可卖量</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="57" parent="5" name="stock_version">
+        <comment>库存版本号</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="58" parent="5" name="init_progress">
+        <comment>初始抢购进度</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="59" parent="5" name="increase_per_hour">
+        <comment>每小时增长</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="60" parent="5" name="max_virtual_sold_num">
+        <comment>虚拟已售数量上限</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="61" parent="5" name="release_status">
+        <comment>发布状态，0-未发布，1-已发布</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="62" parent="5" name="release_time">
+        <comment>发布时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="63" parent="5" name="release_id">
+        <comment>发布人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="64" parent="5" name="is_delete">
+        <comment>是否删除 0-未删除，1-已删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="65" parent="5" name="create_id">
+        <comment>创建人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="66" parent="5" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="67" parent="5" name="update_id">
+        <comment>更新人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="68" parent="5" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="69" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="70" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="71" parent="6" name="area_code">
+        <comment>区域编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="72" parent="6" name="area_name">
+        <comment>区域</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="73" parent="6" name="reg_code">
+        <comment>板块编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="74" parent="6" name="reg_name">
+        <comment>板块</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="75" parent="6" name="store_code">
+        <comment>门店编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="76" parent="6" name="store_name">
+        <comment>门店名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="77" parent="6" name="province_code">
+        <comment>省编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="78" parent="6" name="province_name">
+        <comment>省名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="79" parent="6" name="city_code">
+        <comment>市编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="80" parent="6" name="city_name">
+        <comment>市名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="81" parent="6" name="is_delete">
+        <comment>是否删除 0-未删除，1-已删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="82" parent="6" name="create_id">
+        <comment>创建人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="83" parent="6" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="84" parent="6" name="update_id">
+        <comment>更新人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="85" parent="6" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <index id="86" parent="6" name="AREA_R_S_INDEX">
+        <columns>area_code
+reg_code
+store_code</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="87" parent="6" name="AREA_R_S_INDEX">
+        <columns>area_code
+reg_code
+store_code</columns>
+        <underlying-index>AREA_R_S_INDEX</underlying-index>
+      </key>
+      <key id="88" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="89" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="90" parent="7" name="order_no">
+        <comment>订单id</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="91" parent="7" name="operater">
+        <comment>操作人,0:系统,1:用户,2:后台用户</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="92" parent="7" name="operator_name">
+        <comment>后台用户名</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="93" parent="7" name="operate_log">
+        <comment>操作记录,0:用户提交订单;1.用户完成支付;2:超时未支付,系统自动取消;3:用户取消订单;4.系统完成退款;5.系统发放提货券;</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="94" parent="7" name="order_status">
+        <comment>操作后订单状态,0:未完成,1:已完成,2:已取消</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="95" parent="7" name="pay_status">
+        <comment>操作后支付状态,0:未支付,1:已支付,2:退款中,3:已退款</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="96" parent="7" name="coupons_status">
+        <comment>操作后提货券发放状态,0:未发放,1:已发放</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="97" parent="7" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="98" parent="7" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="99" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="100" parent="8" name="id">
+        <comment>自增长id</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="101" parent="8" name="order_no">
+        <comment>订单id</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="102" parent="8" name="order_status">
+        <comment>订单状态,0:未完成,1.已完成,2.已取消</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="103" parent="8" name="order_cancel_time">
+        <comment>订单取消时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="104" parent="8" name="order_end_time">
+        <comment>订单完成时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="105" parent="8" name="weixin_pay_no">
+        <comment>支付单号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="106" parent="8" name="pay_status">
+        <comment>支付状态,0:未支付,1.已支付,2:退款中,3:已退款</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="107" parent="8" name="pay_time">
+        <comment>支付时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="108" parent="8" name="refund_time">
+        <comment>退款时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="109" parent="8" name="price">
+        <comment>订单金额</comment>
+        <mandatory>1</mandatory>
+        <data-type>decimal(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="110" parent="8" name="area_code">
+        <comment>区域编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="111" parent="8" name="reg_code">
+        <comment>版块编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="112" parent="8" name="store_code">
+        <comment>提货门店id</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="113" parent="8" name="activity_id">
+        <comment>秒杀活动id</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="114" parent="8" name="open_id">
+        <comment>会员id</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="115" parent="8" name="client_no">
+        <comment>绑定会员卡号，13位字符</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="116" parent="8" name="sku_id">
+        <comment>商品id</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="117" parent="8" name="activity_sku_store_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+      </column>
+      <column id="118" parent="8" name="rt_artno">
+        <comment>rt货号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="119" parent="8" name="coupons_status">
+        <comment>提货券发放状态,0:未发放 1.已发放</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="120" parent="8" name="coupons_send_time">
+        <comment>提货券发放时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="121" parent="8" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="122" parent="8" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <index id="123" parent="8" name="order_no">
+        <columns>order_no</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="124" parent="8" name="order_no">
+        <columns>order_no</columns>
+        <underlying-index>order_no</underlying-index>
+      </key>
+      <key id="125" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="126" parent="9" name="id">
+        <comment>自增id</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(18) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="127" parent="9" name="activity_id">
+        <comment>活动id</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="128" parent="9" name="activity_time">
+        <comment>活动时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="129" parent="9" name="open_id">
+        <comment>会员id</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="130" parent="9" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="131" parent="9" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="132" parent="9" name="is_delete">
+        <comment>是否删除；0-未删除，1-已删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(1) unsigned zerofill</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="133" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="134" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(18)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="135" parent="10" name="area_code">
+        <comment>区域编码</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="136" parent="10" name="area_name">
+        <comment>区域</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="137" parent="10" name="sku_name">
+        <comment>商品名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="138" parent="10" name="sku_pic_url">
+        <comment>商品主图</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(3000)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="139" parent="10" name="rt_artno">
+        <comment>rt货号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="140" parent="10" name="sales_num">
+        <comment>销售数量</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="141" parent="10" name="sales_unit">
+        <comment>销售单位</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="142" parent="10" name="specification">
+        <comment>规格</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="143" parent="10" name="original_price">
+        <comment>商品原价</comment>
+        <mandatory>1</mandatory>
+        <data-type>decimal(9,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="144" parent="10" name="is_delete">
+        <comment>是否删除，0-未删除，1-已删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="145" parent="10" name="status">
+        <comment>是否补全，0-未补全，1-已补全</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="146" parent="10" name="create_id">
+        <comment>创建人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="147" parent="10" name="create_time">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="148" parent="10" name="update_id">
+        <comment>更新人ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="149" parent="10" name="update_time">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="150" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
